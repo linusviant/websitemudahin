@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.5.95/css/materialdesignicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link href="../../assets/images/favicon.png" type="img/png" rel="shortcut icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>EVEREST | Documentation</title>
+    <style>
+        .m-card {
+            box-shadow: 0 0 2px 1px rgba(63, 63, 68, .08), 0 0px 0px 0 rgba(63, 63, 68, .05) !important;
+            border-radius: 2px !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <v-app id="inspire">
+            <v-navigation-drawer v-model="drawer" app clipped>
+                <v-list dense class="pt-0">
+                    <v-list-item v-for="item in items" :key="item.text" link :to="item.to">
+                        <v-list-item-action>
+                            <v-icon>{{ item.icon }}</v-icon>
+                        </v-list-item-action>
+                        <v-list-item-content>
+                            <v-list-item-title>
+                                {{ item.text }}
+                            </v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                </v-list>
+            </v-navigation-drawer>
+
+            <!-- Header -->
+            <v-app-bar app clipped-left class="px-2" style="box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);">
+                <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+                <v-toolbar-title class="font-weight-black">EVEREST</v-toolbar-title>
+                <v-spacer></v-spacer>
+
+                <!-- Live chat -->
+                <v-tooltip bottom>
+                    <template v-slot:activator="{ on }">
+                        <v-btn v-on="on" icon href="https://tawk.to/mendelman" target="_blank">
+                            <v-icon>mdi-face-agent</v-icon>
+                        </v-btn>
+                    </template>
+                    <span>Live chat</span>
+                </v-tooltip>
+
+                <!-- Support -->
+                <v-tooltip bottom>
+                    <template v-slot:activator="{ on }">
+                        <v-btn v-on="on" icon
+                            href="https://codecanyon.net/item/everest-php-classified-ads-script/20234300/support"
+                            target="_blank">
+                            <v-icon>mdi-lifebuoy</v-icon>
+                        </v-btn>
+                    </template>
+                    <span>MendelManGroup support</span>
+                </v-tooltip>
+
+                <!-- Buy everest -->
+                <v-tooltip bottom>
+                    <template v-slot:activator="{ on }">
+                        <v-btn v-on="on" icon
+                            href="https://codecanyon.net/item/everest-php-classified-ads-script/20234300"
+                            target="_blank">
+                            <v-icon>mdi-basket-outline</v-icon>
+                        </v-btn>
+                    </template>
+                    <span>Buy EVEREST</span>
+                </v-tooltip>
+
+                <!-- Facebook group -->
+                <v-tooltip bottom>
+                    <template v-slot:activator="{ on }">
+                        <v-btn v-on="on" icon href="https://www.facebook.com/groups/MendelManGroup/" target="_blank">
+                            <v-icon>mdi-facebook-box</v-icon>
+                        </v-btn>
+                    </template>
+                    <span>Facebook group</span>
+                </v-tooltip>
+
+            </v-app-bar>
+
+            <v-content>
+                <v-container class="fill-height pa-8">
+                    <v-layout row>
+
+                        <v-flex xs12>
+                            <v-card class="m-card mb-4">
+                                <v-card-text style="color: #707070;font-size: 13px;">
+
+                                    <!-- Step1 -->
+                                    <div class="mb-12" style="width: 100%;">
+                                        <h2 class="mb-4 font-weight-light black--text">Step one - Add NodeSource yum repository</h2>
+                                        <p>The current LTS version of Node.js is version 12.x.</p>
+                                        <v-alert color="#212121" dark icon="mdi-file-code" border="left">
+                                            curl -sL https://rpm.nodesource.com/setup_12.x | sudo bash -
+                                        </v-alert>
+                                        <v-divider class="mt-8"></v-divider>
+                                    </div>
+
+                                    <!-- Step2 -->
+                                    <div class="mb-12" style="width: 100%;">
+                                        <h2 class="mb-4 font-weight-light black--text">Step two - Install Node.js and npm</h2>
+                                        <p>Once the NodeSource repository is enabled, install Node.js and npm by typing:</p>
+                                        <v-alert color="#212121" dark icon="mdi-file-code" border="left">
+                                            sudo yum install nodejs
+                                        </v-alert>
+                                        <v-divider class="mt-8"></v-divider>
+                                    </div>
+
+                                    <!-- Step3 -->
+                                    <div class="mb-12" style="width: 100%;">
+                                        <h2 class="mb-4 font-weight-light black--text">Step three - Verify the Node.js and npm installation</h2>
+                                        <p>To check that the installation was successful, run the following commands which will print the Node.js and npm versions.
+                                        </p>
+                                        <v-alert color="#212121" dark icon="mdi-file-code" border="left">
+                                            node --version
+                                        </v-alert>
+                                        <v-alert color="#212121" dark icon="mdi-file-code" border="left">
+                                            npm --version
+                                        </v-alert>
+                                    </div>
+
+                                </v-card-text>
+                                <v-card-actions class="px-3">
+                                    <v-spacer></v-spacer>
+                                    <v-btn text color="#1cc0f1" href="../installation.html">
+                                        Installation
+                                    </v-btn>
+                                </v-card-actions>
+                            </v-card>
+                        </v-flex>
+                    </v-layout>
+                </v-container>
+            </v-content>
+        </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.1.3/vue-router.min.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify(),
+            router: new VueRouter({
+                mode: 'history',
+            }),
+            data: () => ({
+                drawer: null,
+                items: [
+                    { icon: 'mdi-book-open-page-variant', text: 'Introduction', to: '../../index.html' },
+                    { icon: 'mdi-cogs', text: 'System requirements', to: '../requirements.html' },
+                    { icon: 'mdi-nodejs', text: 'Preparing server', to: '../server.html' },
+                    { icon: 'mdi-view-dashboard', text: 'Installation', to: '../installation.html' },
+                    { icon: 'mdi-alarm-light-outline', text: 'Upgrade', to: '../upgrade.html' },
+                    { icon: 'mdi-server-network', text: 'Cron job', to: '../cron.html' },
+                    { icon: 'mdi-facebook-box', text: 'Social media', to: '../social.html' },
+                    { icon: 'mdi-credit-card-outline', text: 'Stripe payment', to: '../stripe.html' },
+                ]
+            }),
+        })
+    </script>
+</body>
+
+</html>
